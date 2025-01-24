@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .ease-smooth {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 html {
     scroll-behavior: smooth;
   }
@@ -64,5 +70,9 @@ html {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+  
+  #whatsapp-balloon {
+    transition: opacity 1s ease-out; /* Transição suave para opacidade */
   }
   
