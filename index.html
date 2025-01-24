@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços Tech</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Tailwind Config Adicional */
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -18,15 +13,29 @@
     <header class="bg-gray-900 text-white fixed top-0 left-0 w-full shadow z-10">
         <div class="container mx-auto flex justify-between items-center p-4">
             <h1 class="text-lg font-bold">TechServices</h1>
-            <nav class="space-x-6">
+            <!-- Botão Hamburger -->
+            <button id="menuToggle" class="block md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <!-- Menu de Navegação -->
+            <nav id="menu" class="hidden md:flex space-x-6">
                 <a href="#hero" class="hover:text-gray-300">Início</a>
                 <a href="#services" class="hover:text-gray-300">Serviços</a>
                 <a href="#about" class="hover:text-gray-300">Sobre</a>
                 <a href="#contact" class="hover:text-gray-300">Contato</a>
             </nav>
         </div>
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" id="mobile-menu" class="hidden bg-gray-800 text-white md:hidden">
+            <a href="#hero" class="block px-4 py-2 hover:bg-gray-700">Início</a>
+            <a href="#services" class="block px-4 py-2 hover:bg-gray-700">Serviços</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-gray-700">Sobre</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-gray-700">Contato</a>
+        </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section id="hero" class="h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-center">
         <div>
@@ -87,6 +96,17 @@
         </div>
     </section>
 
+    <!-- Tela de Carregamento -->
+<div id="loading" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div class="loader">
+      <div class="circle">
+        <!-- Ícone de raio dentro do círculo -->
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+  </div>
+  
+
     <!-- Rodapé -->
     <footer class="bg-gray-900 text-white py-4">
         <div class="container mx-auto text-center">
@@ -111,6 +131,26 @@
             alert('Mensagem enviada com sucesso!');
         });
     </script>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+
+<script>
+    // Quando a página for completamente carregada, ocultar o loading
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loading');
+      loadingScreen.style.display = 'none';  // Esconde a tela de carregamento
+    });
+  </script>
+
+  
 </body>
 </html>
 
