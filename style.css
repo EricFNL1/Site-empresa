@@ -12,14 +12,19 @@ html {
     scroll-behavior: smooth;
   }
 
-   /* Efeito de fade-in */
- .fade-in {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
+  header {
+    z-index: 10; /* Garantir que o menu está acima do conteúdo */
+    position: relative; /* Necessário para o z-index funcionar */
+}
+
+.fade-in {
+    z-index: 20; /* Garantir que a imagem aparece acima do menu */
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 
 .fade-in.show {
-  opacity: 1;
+    opacity: 1;
 }
 
   #menu a {
