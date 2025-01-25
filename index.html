@@ -33,6 +33,7 @@
                 <a href="#services" class="hover:text-gray-300">Serviços</a>
                 <a href="#about" class="hover:text-gray-300">Sobre</a>
                 <a href="#contact" class="hover:text-gray-300">Contato</a>
+                <a href="#" class="hover:text-gray-300">Já sou cliente</a>
             </nav>
         </div>
         <!-- Menu Mobile -->
@@ -41,24 +42,37 @@
             <a href="#services" class="block px-4 py-2 hover:bg-gray-700">Serviços</a>
             <a href="#about" class="block px-4 py-2 hover:bg-gray-700">Sobre</a>
             <a href="#contact" class="block px-4 py-2 hover:bg-gray-700">Contato</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Já sou cliente</a>
         </div>
     </header>
     
     
     
     <!-- Hero Section -->
-    <section id="hero" class="h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-center">
-        <div>
-            <h2 class="text-4xl md:text-6xl font-bold mb-4">Soluções Inovadoras para o Seu Negócio</h2>
-            <p class="text-lg md:text-xl mb-6">Criamos sites modernos, gerenciamos redes e oferecemos suporte em TI.</p>
-            <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition">Entre em Contato</a>
-        </div>
-    </section>
+    <section id="hero" class="h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-center relative">
+      <div>
+          <h2 class="text-4xl md:text-6xl font-bold mb-4">Soluções Inovadoras para o Seu Negócio</h2>
+          <p class="text-lg md:text-xl mb-6">Criamos sites modernos, gerenciamos redes e oferecemos suporte em TI.</p>
+          <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition">Entre em Contato</a>
+      </div>
 
+      <!-- Imagem dinâmica -->
+      <img src="https://via.placeholder.com/500" alt="Modelo" 
+           class="fade-in absolute top-10 right-10 w-[500px]">
+  </section>
+  
+  
+  
       <!-- WhatsApp Button -->
   <a href="https://wa.me/+5519983224023" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
   </a>
+
+    <!-- Botão para voltar ao topo -->
+<button id="backToTopBtn" class="fixed bottom-6 left-6 bg-blue-500 text-white p-3 shadow-lg hover:bg-blue-600 transition duration-300 text-2xl" style="display: none;">
+  ↑
+</button>
+
 
     <!-- Serviços -->
     <section id="services" class="py-16 bg-gray-100">
@@ -135,6 +149,15 @@
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+<script>
+  // Aguarde 3 segundos para exibir a imagem
+  setTimeout(() => {
+      const image = document.querySelector('.fade-in');
+      image.classList.add('show'); // Adiciona a classe para mostrar a imagem
+  }, 3000); // 3000ms = 3 segundos
+</script>
 
     <script>
         // Validação do Formulário
@@ -302,6 +325,31 @@
   new Raindrops('raincanvas', raindropsOptions);
 </script>
   
+
+<script>
+  // Obtém o botão
+var backToTopBtn = document.getElementById("backToTopBtn");
+
+// Quando o usuário rolar para baixo 20px a partir do topo, mostre o botão
+window.onscroll = function() {
+    if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+// Quando o usuário clicar no botão, rolar para o topo da página
+backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Suaviza a rolagem
+    });
+});
+
+</script>
+
+
 </body>
 </html>
 

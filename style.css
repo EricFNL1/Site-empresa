@@ -12,6 +12,16 @@ html {
     scroll-behavior: smooth;
   }
 
+   /* Efeito de fade-in */
+ .fade-in {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
   #menu a {
     font-family: 'Poppins', sans-serif; /* Altere para a fonte desejada */
     font-size: 18px; /* Tamanho da fonte */
@@ -74,5 +84,25 @@ html {
   
   #whatsapp-balloon {
     transition: opacity 1s ease-out; /* Transição suave para opacidade */
+  }
+  
+  #backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #252b25;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+    transition: background-color 0.3s;
+    z-index: 100;
+    border-radius: 20%;
+    opacity: 50%;
+  }
+  
+  #backToTopBtn:hover {
+    background-color: #404940;
   }
   
